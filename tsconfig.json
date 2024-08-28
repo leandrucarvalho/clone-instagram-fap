@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6", // ou "es2015"
+    "module": "es6", // ou "esnext"
+    "moduleResolution": "node", // Certifique-se de que esta configuração está presente
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true, // Necessário para importações de módulos CommonJS
+    "skipLibCheck": true,
+    "baseUrl": ".", // Permite a resolução de módulos relativos ao diretório base
+    "paths": {
+      "*": ["node_modules/*"] // Adiciona suporte à resolução de módulos do node_modules
+    }
+  }
+}

@@ -16,7 +16,9 @@
 }
 
 .post-header {
+  border: solid 2px #ff0000;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -31,13 +33,30 @@
   border: solid 1px #ccc;
 }
 
+.more-options {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
 .post-img {
+  border: solid 2px #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  height: 350px;
+}
+
+.post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .post-icons {
+  border: solid 2px #ff0000;
   display: flex;
   justify-content: space-between;
 }
@@ -45,4 +64,15 @@
 .post-icons > div {
   display: flex;
   gap: 10px;
+}
+
+.post-likes {
+  border: solid 2px #ff0000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-title {
+  border: solid 2px #ff0000;
 }
