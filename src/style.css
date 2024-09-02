@@ -30,7 +30,7 @@
 
 .post-header .left > img {
   border-radius: 50%;
-  border: solid 1px #ccc;
+  border: solid 1px #ff0000;
 }
 
 .more-options {
@@ -64,6 +64,16 @@
 .post-icons > div {
   display: flex;
   gap: 10px;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.liked {
+  color: #ff0000;
 }
 
 .post-likes {

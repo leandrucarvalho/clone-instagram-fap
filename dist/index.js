@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { faker } from "";
+import { faker } from "@faker-js/faker";
 class Post {
     constructor(userName, imageUrl, postDescription) {
         this._id = uuidv4();
