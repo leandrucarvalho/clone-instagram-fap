@@ -13,19 +13,17 @@ window.onload = () => {
  */
 let isLiked = false;
 function likePost() {
-    const btnLike = document.querySelector(".fa-regular.fa-heart");
+    const btnLike = document.querySelector(".fa-heart");
     if (isLiked) {
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.remove("fa-regular", "fa-heart");
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.add("fa-solid", "fa-heart");
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.add("liked");
+        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.remove("fa-solid", "liked");
+        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.add("fa-regular");
         isLiked = false;
-        console.log("liked");
+        console.log("not liked");
     }
     else {
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.remove("fa-solid", "fa-heart");
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.remove("liked");
-        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.add("fa-regular", "fa-heart");
+        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.remove("fa-regular");
+        btnLike === null || btnLike === void 0 ? void 0 : btnLike.classList.add("fa-solid", "liked");
         isLiked = true;
-        console.log("not liked");
+        console.log("liked");
     }
 }

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+/* import { v4 as uuidv4 } from "uuid";
 import { faker } from "@faker-js/faker";
 
 class Post {
@@ -58,3 +58,4 @@ for (let i = 0; i < 15; i++) {
 }
 
 console.log(posts);
+ */

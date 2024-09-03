@@ -13,18 +13,17 @@ window.onload = () => {
 let isLiked = false;
 
 function likePost() {
-  const btnLike = document.querySelector(".fa-regular.fa-heart");
+  const btnLike = document.querySelector(".fa-heart");
+
   if (isLiked) {
-    btnLike?.classList.remove("fa-regular", "fa-heart");
-    btnLike?.classList.add("fa-solid", "fa-heart");
-    btnLike?.classList.add("liked");
+    btnLike?.classList.remove("fa-solid", "liked");
+    btnLike?.classList.add("fa-regular");
     isLiked = false;
-    console.log("liked");
-  } else {
-    btnLike?.classList.remove("fa-solid", "fa-heart");
-    btnLike?.classList.remove("liked");
-    btnLike?.classList.add("fa-regular", "fa-heart");
-    isLiked = true;
     console.log("not liked");
+  } else {
+    btnLike?.classList.remove("fa-regular");
+    btnLike?.classList.add("fa-solid", "liked");
+    isLiked = true;
+    console.log("liked");
   }
 }
