@@ -27,3 +27,19 @@ function likePost() {
         console.log("liked");
     }
 }
+let isBookmarked = false;
+function bookmark() {
+    let btnBookmark = document.querySelector(".fa-bookmark");
+    if (isBookmarked) {
+        btnBookmark === null || btnBookmark === void 0 ? void 0 : btnBookmark.classList.remove("fa-solid");
+        btnBookmark === null || btnBookmark === void 0 ? void 0 : btnBookmark.classList.add("fa-regular");
+        isBookmarked = false;
+        console.log("not bookmarked");
+    }
+    else {
+        btnBookmark === null || btnBookmark === void 0 ? void 0 : btnBookmark.classList.remove("fa-regular");
+        btnBookmark === null || btnBookmark === void 0 ? void 0 : btnBookmark.classList.add("fa-solid");
+        isBookmarked = true;
+        console.log("bookmarked");
+    }
+}

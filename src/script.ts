@@ -10,8 +10,8 @@ window.onload = () => {
   }
 };
  */
-let isLiked = false;
 
+let isLiked = false;
 function likePost() {
   const btnLike = document.querySelector(".fa-heart");
 
@@ -25,5 +25,22 @@ function likePost() {
     btnLike?.classList.add("fa-solid", "liked");
     isLiked = true;
     console.log("liked");
+  }
+}
+
+let isBookmarked = false;
+function bookmark() {
+  let btnBookmark = document.querySelector(".fa-bookmark");
+
+  if (isBookmarked) {
+    btnBookmark?.classList.remove("fa-solid");
+    btnBookmark?.classList.add("fa-regular");
+    isBookmarked = false;
+    console.log("not bookmarked");
+  } else {
+    btnBookmark?.classList.remove("fa-regular");
+    btnBookmark?.classList.add("fa-solid");
+    isBookmarked = true;
+    console.log("bookmarked");
   }
 }
