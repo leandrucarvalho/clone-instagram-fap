@@ -12,7 +12,10 @@ window.onload = () => {
  */
 
 let isLiked = false;
+
 function likePost() {
+  isLiked = !isLiked;
+
   const btnLike = document.querySelector(".fa-heart");
 
   if (isLiked) {

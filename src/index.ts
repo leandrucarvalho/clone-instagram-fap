@@ -1,61 +1,52 @@
-/* import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { faker } from "@faker-js/faker";
 
 class Post {
-  private _id: string;
+  private _id: string = uuidv4();
   private _userName: string;
+  private _avatarUrl: string;
   private _imageUrl: string;
-  private _postDescription: string;
-  private _numLikes: number;
+  private _description: string;
+  private _isLiked: boolean = false;
+  private _numberOfLikes: number = 0;
+  private _createdAt: Date = new Date();
 
-  constructor(userName: string, imageUrl: string, postDescription: string) {
-    this._id = uuidv4();
+  constructor(
+    userName: string,
+    avatarUrl: string,
+    imageUrl: string,
+    description: string
+  ) {
     this._userName = userName;
+    this._avatarUrl = avatarUrl;
     this._imageUrl = imageUrl;
-    this._postDescription = postDescription;
-    this._numLikes = 0;
+    this._description = description;
   }
 
-  get id() {
-    return this._id;
-  }
+  like() {
+    this._isLiked = !this._isLiked;
 
-  get userName() {
-    return this._userName;
-  }
+    if (this._isLiked === true) {
+      this._numberOfLikes += 1;
+    } else {
+      this._numberOfLikes -= 1;
+    }
 
-  get imageUrl() {
-    return this._imageUrl;
-  }
-
-  get postDescription() {
-    return this._postDescription;
-  }
-
-  set postDescription(postDescription: string) {
-    this._postDescription = postDescription;
-  }
-
-  get numLikes() {
-    return this._numLikes;
-  }
-
-  incrementLikes() {
-    this._numLikes += 1;
+    console.log(this._numberOfLikes);
   }
 }
 
 const posts: Post[] = [];
 
-for (let i = 0; i < 15; i++) {
+for (let index = 0; index < 15; index++) {
   const post = new Post(
     faker.person.firstName(),
-    faker.image.url(),
-    faker.lorem.lines(1)
+    faker.image.avatarGitHub(),
+    faker.image.urlPicsumPhotos(),
+    faker.lorem.paragraph()
   );
-  post.incrementLikes();
+
   posts.push(post);
 }
 
-console.log(posts);
- */
+console.log("Testando");
