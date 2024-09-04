@@ -9,7 +9,6 @@ class Post {
   private _description: string;
   private _isLiked: boolean = false;
   private _numberOfLikes: number = 0;
-  private _createdAt: Date = new Date();
 
   constructor(
     userName: string,
@@ -25,28 +24,78 @@ class Post {
 
   like() {
     this._isLiked = !this._isLiked;
+    this._numberOfLikes += this._isLiked ? 1 : -1;
+    this.updateLikes();
+  }
 
-    if (this._isLiked === true) {
-      this._numberOfLikes += 1;
-    } else {
-      this._numberOfLikes -= 1;
+  private updateLikes() {
+    const postElement = document.querySelector(
+      `.post-container[data-id="${this._id}"]`
+    );
+    if (postElement) {
+      const likeSpan = postElement.querySelector(".post-likes span");
+      if (likeSpan) {
+        likeSpan.textContent = `${this._numberOfLikes} likes`;
+      }
+      const likeIcon = postElement.querySelector(".post-icons .fa-heart");
+      if (likeIcon) {
+        likeIcon.classList.toggle("liked", this._isLiked);
+      }
     }
+  }
 
-    console.log(this._numberOfLikes);
+  render() {
+    const post = document.createElement("div");
+    post.classList.add("post-container");
+    post.innerHTML = `
+      <div class="post-header">
+        <div class="left">
+          <img src="${this._avatarUrl}" width="30" height="30" alt="imagem avatar" class="avatar" />
+          <span class="user-name">${this._userName}</span>
+        </div>
+        <div class="right">
+          <span>Follow </span>
+          <button class="more-options">...</button>
+        </div>
+      </div>
+      <div class="post-img">
+        <img src="${this._imageUrl}" />
+      </div>
+      <div class="post-icons">
+        <div>
+          <div class="btn like-btn">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="btn">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="btn">
+            <i class="fa-regular fa-paper-plane"></i>
+          </div>
+        </div>
+        <div class="btn">
+          <i class="fa-regular fa-bookmark"></i>
+        </div>
+      </div>
+      <div class="post-likes">
+        <i class="fa-solid fa-heart"></i>
+        <span>${this._numberOfLikes} likes</span>
+      </div>
+      <div class="post-title">
+        <span>${this._description}</span>
+      </div>
+    `;
+    document.body.appendChild(post);
+    console.log("rendering");
   }
 }
-
-const posts: Post[] = [];
 
 for (let index = 0; index < 15; index++) {
   const post = new Post(
     faker.person.firstName(),
-    faker.image.avatarGitHub(),
-    faker.image.urlPicsumPhotos(),
-    faker.lorem.paragraph()
+    faker.image.avatar(),
+    faker.image.url(),
+    faker.lorem.sentence()
   );
-
-  posts.push(post);
+  post.render();
 }
-
-console.log("Testando");
