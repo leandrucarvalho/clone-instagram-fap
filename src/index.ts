@@ -36,10 +36,14 @@ class Post {
       const likeSpan = postElement.querySelector(".post-likes span");
       if (likeSpan) {
         likeSpan.textContent = `${this._numberOfLikes} likes`;
+        console.log(this._numberOfLikes);
       }
       const likeIcon = postElement.querySelector(".post-icons .fa-heart");
       if (likeIcon) {
+        likeIcon.classList.toggle("fa-solid", this._isLiked);
+        likeIcon.classList.toggle("fa-regular", !this._isLiked);
         likeIcon.classList.toggle("liked", this._isLiked);
+        console.log(this._isLiked);
       }
     }
   }
@@ -47,6 +51,8 @@ class Post {
   render() {
     const post = document.createElement("div");
     post.classList.add("post-container");
+    post.setAttribute("data-id", this._id);
+
     post.innerHTML = `
       <div class="post-header">
         <div class="left">
@@ -85,6 +91,10 @@ class Post {
         <span>${this._description}</span>
       </div>
     `;
+
+    post.querySelector(".like-btn")?.addEventListener("click", () => {
+      this.like();
+    });
     document.body.appendChild(post);
     console.log("rendering");
   }
@@ -92,10 +102,13 @@ class Post {
 
 for (let index = 0; index < 15; index++) {
   const post = new Post(
-    faker.person.firstName(),
-    faker.image.avatar(),
-    faker.image.url(),
-    faker.lorem.sentence()
+    faker.person.firstName() || "Anonymous",
+    faker.image.avatar() || "default-avatar-url",
+    faker.image.url() || "default-image-url",
+    faker.lorem.sentence() || "No description available"
   );
+
+  console.log(`Post ${index}`, post);
+
   post.render();
 }
