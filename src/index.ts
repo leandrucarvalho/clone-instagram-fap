@@ -60,7 +60,7 @@ class Post {
           <span class="user-name">${this._userName}</span>
         </div>
         <div class="right">
-          <span>Follow </span>
+          <button>Follow</button>
           <button class="more-options">...</button>
         </div>
       </div>
@@ -92,9 +92,10 @@ class Post {
       </div>
     `;
 
-    post.querySelector(".like-btn")?.addEventListener("click", () => {
-      this.like();
-    });
+    post
+      .querySelector(".like-btn")
+      ?.addEventListener("click", () => this.like());
+
     document.body.appendChild(post);
     console.log("rendering");
   }
