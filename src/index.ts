@@ -60,8 +60,8 @@ class Post {
           <span class="user-name">${this._userName}</span>
         </div>
         <div class="right">
-          <button>Follow</button>
-          <button class="more-options">...</button>
+          <button class="follow-btn">FOLLOW</button>
+          <button class="more-options"><span>...</span></button>
         </div>
       </div>
       <div class="post-img">
