@@ -24,7 +24,6 @@ body {
 }
 
 .post-header {
-  border: solid 2px #ff0000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,18 +37,36 @@ body {
 
 .post-header .left > img {
   border-radius: 50%;
-  border: solid 1px #ff0000;
 }
 
-.more-options {
-  background: none;
-  border: none;
-  color: #000;
+.post-header .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-header .right .follow-btn {
+  border: solid 2px #a5d2e2;
+  color: #a5d2e2;
+  padding: 1px 15px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
 }
 
+.post-header .right .more-options {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
 .post-img {
-  border: solid 2px #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +81,6 @@ body {
 }
 
 .post-icons {
-  border: solid 2px #ff0000;
   display: flex;
   justify-content: space-between;
 }
@@ -85,12 +101,7 @@ body {
 }
 
 .post-likes {
-  border: solid 2px #ff0000;
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.post-title {
-  border: solid 2px #ff0000;
 }
