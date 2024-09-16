@@ -42,7 +42,7 @@ class Post {
       if (likeIcon) {
         likeIcon.classList.toggle("fa-solid", this._isLiked);
         likeIcon.classList.toggle("fa-regular", !this._isLiked);
-        likeIcon.classList.toggle("liked", this._isLiked);
+        likeIcon.classList.toggle("heart-beat", this._isLiked);
         console.log(this._isLiked);
       }
     }
@@ -97,7 +97,6 @@ class Post {
       ?.addEventListener("click", () => this.like());
 
     document.body.appendChild(post);
-    console.log("rendering");
   }
 }
 
@@ -108,8 +107,5 @@ for (let index = 0; index < 15; index++) {
     faker.image.url() || "default-image-url",
     faker.lorem.sentence() || "No description available"
   );
-
-  console.log(`Post ${index}`, post);
-
   post.render();
 }
