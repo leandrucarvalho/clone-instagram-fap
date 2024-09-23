@@ -10,6 +10,8 @@ Um projeto que simula a interface e funcionalidades básicas do Instagram. Desen
 - TypeScript
 - FontAwesome - icones
 - Vite - ferramenta de desenvolvimento
+- faker.js - gerador de dados
+- uuid - gerador de UUIDs únicos para identificação dos posts
 
 ## Funcionalidades
 
