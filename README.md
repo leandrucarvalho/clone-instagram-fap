@@ -8,6 +8,8 @@ Um projeto que simula a interface e funcionalidades básicas do Instagram. Desen
 - CSS
 - JavaScript
 - TypeScript
+- FontAwesome - icones
+- Vite - ferramenta de desenvolvimento
 
 ## Funcionalidades
 
